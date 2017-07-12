@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="addAssetModalLabel">Add Asset</h4>
+        <h4 class="modal-title" id="addAssetModalLabel">Add Commodity </h4>
       </div>
       <form [formGroup]="myForm">
         <div class="modal-body">
@@ -76,7 +76,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="updateAssetModalLabel">Update Asset</h4>
+        <h4 class="modal-title" id="updateAssetModalLabel">Update Commodity</h4>
       </div>
       <form [formGroup]="myForm">
         <div class="modal-body">
@@ -147,7 +147,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="deleteAssetModalLabel">Delete Asset</h4>
+        <h4 class="modal-title" id="deleteAssetModalLabel">Delete Commodity</h4>
       </div>
       <form [formGroup]="myForm" (ngSubmit)="deleteAsset()">
         <div class="modal-body">
@@ -179,7 +179,7 @@
   <h1 id='assetName'>Commodity</h1>
   <div class="row">
     <div class="col-md-12 text-right">
-      <button (click)="resetForm()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addAssetModal">Add Asset</button>
+      <button (click)="resetForm()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addAssetModal">Add Commodity</button>
     </div>
   </div>
   <br>
