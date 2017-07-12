@@ -1,0 +1,67 @@
+<div class="modal fade" id="addAssetModal" tabindex="-1" role="dialog" aria-labelledby="addAssetModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addAssetModalLabel">Add Transactions</h4>
+      </div>
+      <form [formGroup]="myForm">
+        <div class="modal-body">
+
+            <div class="form-group text-left">
+              <label for="pig">돼지</label>
+                <input formControlName="pig" type="text" class="form-control">
+            </div>
+          
+            <div class="form-group text-left">
+              <label for="newOwner">새 소유자</label>
+                <input formControlName="newOwner" type="text" class="form-control">
+            </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button (click)="addAsset(myForm);" type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+	<div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+		<strong>Error:</strong> {{errorMessage}}
+	</div>
+  <h1 id='assetName'>Transactions</h1>
+  <div class="row">
+    <div class="col-md-12 text-right">
+      <button (click)="resetForm()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addAssetModal">Add Transactions</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-responsive table-striped">
+        <thead class="thead">
+          <tr class="thead-cols">
+                <th class="info">돼지</th>
+                <th class="info">소유자</th>
+                <th class="info">트랜잭션ID</th>
+                <th class="info">시간</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let asset of allAssets">
+                <td>{{asset.pig}}</td>
+                <td>{{asset.newOwner}}</td>
+                <td>{{asset.transactionId}}</td>
+                <td>{{asset.timestamp}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
